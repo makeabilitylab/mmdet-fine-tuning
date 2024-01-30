@@ -2,7 +2,7 @@
 
 Welcome to Makeability Lab's repository about fine-tuning RTMDet models! Fine-tuning is a pivotal process in deep learning where a pre-trained model, already trained on a large dataset, is further trained or "fine-tuned" on a smaller, specific dataset. This approach leverages the learned features and patterns from the initial training, making it highly efficient for tasks like image classification, object detection, and more in CV.
 
-In this repo we mainly applies the approach of feature extraction, in which we freeze the base layers of the model, leveraging their learned features, and only train the final layers specific to our tasks.
+In this repo we mainly apply the approach of feature extraction, in which we freeze the base layers of the model, leveraging their learned features, and only train the final layers specific to our tasks.
 
 Kindly note that this repo is valid as of Jan 29th 2024, in any future circumstances where OpenMMLab, owner of mmdetection and rtmdet, changes their implementation, please refer to their official [github](https://github.com/open-mmlab/mmdetection).
 
