@@ -28,6 +28,6 @@ It is recommended that you first install Pytorch and then mmdetection otherwise 
 
 1. To fine-tune a pre-trained model, you will have to setup a customized config file. Check and run `config_setup.py`.
 
-1. Now, run `tools/train.py PATH/TO/CONFIG` and let the training process start. If in any circumstances the training is interrupted but the last checkpoint is successfully saved into './work_dir', you can resume the process from the where it stopped by running `tools/train.py PATH/TO/CONFIG --resume auto`. Remember to toggle the resume option in your config file to the `True`.
+1. Now, run `tools/train.py PATH/TO/CONFIG` and let the training process start. If in any circumstances the training is interrupted but the last checkpoint is successfully saved into `./work_dir`, you can resume the process from the where it stopped by running `tools/train.py PATH/TO/CONFIG --resume auto`. Remember to toggle the resume option in your config file to the `True`.
 
 1. When training is done, run `infer_img.py` or `infer_video.py` to test the fine-tuned model on either a single image or a video.
