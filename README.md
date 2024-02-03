@@ -4,7 +4,7 @@ Welcome to Makeability Lab's repository about fine-tuning RTMDet models! Fine-tu
 
 In this repo we mainly apply the approach of feature extraction, in which we freeze the base layers of the model, leveraging their learned features, and only train the final layers specific to our tasks.
 
-Kindly note that this repo is valid as of Jan 29th 2024, in any future circumstances where OpenMMLab, owner of mmdetection and rtmdet, changes their implementation, please refer to their official [github](https://github.com/open-mmlab/mmdetection).
+Kindly note that this repo is valid as of Jan 29th 2024, in any future circumstances where OpenMMLab, owner of MMDetection and RTMDet, changes their implementation, please refer to their official [github](https://github.com/open-mmlab/mmdetection).
 
 ## Setup
 
