@@ -37,6 +37,9 @@ It is recommended that you first install Pytorch and then mmdetection otherwise 
 MMDetection toolbox provides local visualization backends and saves all training related data into a single JSON file that would be placed in `./work_dir` alongside with trained weights. However, if you want to visualize these data as graphs and track the training process remotely, you can use online visualization platforms such as Weights & Bias. To do this:
 
 1. Install Weights & Bias in your conda env by `pip install wandb`. Note: do not call `pip` inside your MMDetection directory to avoid creating an unnecessary `wandb.py` and make sure there is no such file in that directory, otherwise an error message would pop out indicating that there is circluar import.
+
 2. `wandb login` to log into your wandb account (need to get one first). Simply copy & paste your api key into the conda prompt (you might not see the string as the interface won't display your api key) and press enter.
+
 3. Modify the `train.py` script by adding `import wandb` and `wandb.init( project = "your project name" )`.
+
 4. Rememebr to add wandb visualization backend to your config.
