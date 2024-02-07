@@ -38,5 +38,5 @@ MMDetection toolbox provides local visualization backends and saves all training
 
 1. Install Weights & Bias in your conda env by `pip install wandb`. Note: do not call `pip` inside your MMDetection directory to avoid creating an unnecessary `wandb.py` and make sure there is no such file in that directory, otherwise an error message would pop out indicating that there is circluar import.
 2. `wandb login` to log into your wandb account (need to get one first). Simply copy & paste your api key into the conda prompt (you might not see the string as the interface won't display your api key) and press enter.
-3. Modify the `train.py` script by adding `import wandb` and `wandb.init( project = "your project name")`.
+3. Modify the `train.py` script by adding `import wandb` and `wandb.init( project = "your project name" )`.
 4. Rememebr to add wandb visualization backend to your config.
