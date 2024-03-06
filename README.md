@@ -22,7 +22,7 @@ It is recommended that you first install Pytorch and then mmdetection otherwise 
 
 1. The next step is to download pre-trained config and weights files from mmdetection. For example, `mim download mmdet --config rtmdet-ins_l_8xb32-300e_coco --dest ./checkpoints`. This means that this is a pre-trained RTMDet instance segmentation model that has been trained with 8 GPUs, a batch size of 32 and 300 epochs on COCO dataset. You should name your weights file in the same way and you can find all config files for all available models [here](https://github.com/open-mmlab/mmdetection/tree/main/configs).
 
-1. After downloading the pre-trained model that you would like to work with, run `test_install.py` to see if it is working correctly. If you can see an image with segmentation masks pops out, then you have installed everthing correctly. Otherwise check the error messages and google.
+1. After downloading the pre-trained model that you would like to work with, run `test_install.py` to see if it is working correctly. If you can see an image with segmentation masks pops out, then you have installed everything correctly. Otherwise check the error messages and google.
 
 1. Move your COCO_MMdetection dataset to `./data` and run `coco_classcheck.py` to check the classes contained in your data.
 
