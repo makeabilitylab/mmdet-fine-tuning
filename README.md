@@ -8,13 +8,13 @@ Kindly note that this repo is valid as of Jan 29th 2024, in any future circumsta
 
 ## Setup
 
-Firstly you will have to setup conda environment, mmdetection toolbox and pytorch. If your GPU supports CUDA, please also install it.
+Firstly you will have to setup conda environment, MMDetection toolbox and pytorch. If your GPU supports CUDA, please also install it.
 
 1. Install [Anaconda](https://docs.anaconda.com/free/anaconda/install/index.html).
 1. Install [Pytorch](https://pytorch.org/get-started/locally/). Choose CUDA version when you have CUDA device.
 1. Install [MMDetection](https://mmdetection.readthedocs.io/en/latest/get_started.html).
 
-It is recommended that you first install Pytorch and then mmdetection otherwise your Pytorch might not be correctly complied with CUDA.
+It is recommended that you first install Pytorch and then MMDetection otherwise your Pytorch might not be correctly complied with CUDA.
 
 ## Fine-Tuning
 
@@ -31,6 +31,12 @@ It is recommended that you first install Pytorch and then mmdetection otherwise 
 1. Now, run `tools/train.py PATH/TO/CONFIG` and let the training process start. If in any circumstances the training is interrupted but the last checkpoint is successfully saved into `./work_dir`, you can resume the process from where it stopped by running `tools/train.py PATH/TO/CONFIG --resume auto`. Remember to toggle the resume option in your config file to `True`.
 
 1. When training is done, run `infer_img.py` or `infer_video.py` to test the fine-tuned model on either a single image or a video.
+
+## Evaluation
+
+When training is done, you may want to evalute the model's performance and get several metrics for writing report and paper. For instance segmentation tasks, there are 6 most commonly used metrics namly segmentation mean average precison or `segm_mAP`, segmentation mean average precison at 50% IOU (Intersection over Union) threshold or `segm_mAP_50`, segmentation mean average precison at 75% IOU threshold or `segm_mAP_75`, segmentation mean average precison on small area (less than 32\*32 pixels) or `segm_mAP_s`, segmentation mean average precison on medium area (greater than 32\*32 but less than 96\*96 pixels ) or `segm_mAP_m` and segmentation mean average precison on medium area (greater than 96\*96 pixels ) or `segm_mAP_l`.
+
+To get these metrics, simply run `Python tools/test.py PATH/TO/CONFIG PATH/TO/WEIGHTS`.
 
 ## Optional - Visualization
 
