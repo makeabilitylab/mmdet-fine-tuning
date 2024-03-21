@@ -22,21 +22,21 @@ It is recommended that you first install Pytorch and then MMDetection otherwise 
 
 1. The next step is to download pre-trained config and weights files from mmdetection. For example, `mim download mmdet --config rtmdet-ins_l_8xb32-300e_coco --dest ./checkpoints`. This means that this is a pre-trained RTMDet instance segmentation model that has been trained with 8 GPUs, a batch size of 32 and 300 epochs on COCO dataset. You should name your weights file in the same way and you can find all config files for all available models [here](https://github.com/open-mmlab/mmdetection/tree/main/configs).
 
-1. After downloading the pre-trained model that you would like to work with, run `test_install.py` to see if it is working correctly. If you can see an image with segmentation masks pops out, then you have installed everything correctly. Otherwise check the error messages and google.
+1. After downloading the pre-trained model that you would like to work with, run `python test_install.py` to see if it is working correctly. If you can see an image with segmentation masks pops out, then you have installed everything correctly. Otherwise check the error messages and google.
 
-1. Move your COCO_MMdetection dataset to `./data` and run `coco_classcheck.py` to check the classes contained in your data.
+1. Move your COCO_MMdetection dataset to `./data` and run `python coco_classcheck.py` to check the classes contained in your data.
 
-1. To fine-tune a pre-trained model, you will have to setup a customized config file. Check and run `config_setup.py`.
+1. To fine-tune a pre-trained model, you will have to setup a customized config file. Check and run `python config_setup.py`.
 
-1. Now, run `tools/train.py PATH/TO/CONFIG` and let the training process start. If in any circumstances the training is interrupted but the last checkpoint is successfully saved into `./work_dir`, you can resume the process from where it stopped by running `tools/train.py PATH/TO/CONFIG --resume auto`. Remember to toggle the resume option in your config file to `True`.
+1. Now, run `python tools/train.py PATH/TO/CONFIG` and let the training process start. If in any circumstances the training is interrupted but the last checkpoint is successfully saved into `./work_dir`, you can resume the process from where it stopped by running `python tools/train.py PATH/TO/CONFIG --resume auto`. Remember to toggle the resume option in your config file to `True`.
 
-1. When training is done, run `infer_img.py` or `infer_video.py` to test the fine-tuned model on either a single image or a video.
+1. When training is done, run `python infer_img.py` or `python infer_video.py` to test the fine-tuned model on either a single image or a video.
 
 ## Evaluation
 
 When training is done, you may want to evalute the model's performance and get several metrics for writing report and paper. For instance segmentation tasks, there are 6 most commonly used metrics namly segmentation mean average precison or `segm_mAP`, segmentation mean average precison at 50% IOU (Intersection over Union) threshold or `segm_mAP_50`, segmentation mean average precison at 75% IOU threshold or `segm_mAP_75`, segmentation mean average precison on small area (less than 32\*32 pixels) or `segm_mAP_s`, segmentation mean average precison on medium area (greater than 32\*32 but less than 96\*96 pixels ) or `segm_mAP_m` and segmentation mean average precison on large area (greater than 96\*96 pixels ) or `segm_mAP_l`.
 
-To get these metrics for your model on the specific dataset on which it was trained or fine-tuned, simply run `Python tools/test.py PATH/TO/CONFIG PATH/TO/WEIGHTS` and the evaluation would be carried out on the test set.
+To get these metrics for your model on the specific dataset on which it was trained or fine-tuned, simply run `python tools/test.py PATH/TO/CONFIG PATH/TO/WEIGHTS` and the evaluation would be carried out on the test set.
 
 ## Optional - Visualization
 
