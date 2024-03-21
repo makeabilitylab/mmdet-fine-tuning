@@ -34,9 +34,9 @@ It is recommended that you first install Pytorch and then MMDetection otherwise 
 
 ## Evaluation
 
-When training is done, you may want to evalute the model's performance and get several metrics for writing report and paper. For instance segmentation tasks, there are 6 most commonly used metrics namly segmentation mean average precison or `segm_mAP`, segmentation mean average precison at 50% IOU (Intersection over Union) threshold or `segm_mAP_50`, segmentation mean average precison at 75% IOU threshold or `segm_mAP_75`, segmentation mean average precison on small area (less than 32\*32 pixels) or `segm_mAP_s`, segmentation mean average precison on medium area (greater than 32\*32 but less than 96\*96 pixels ) or `segm_mAP_m` and segmentation mean average precison on medium area (greater than 96\*96 pixels ) or `segm_mAP_l`.
+When training is done, you may want to evalute the model's performance and get several metrics for writing report and paper. For instance segmentation tasks, there are 6 most commonly used metrics namly segmentation mean average precison or `segm_mAP`, segmentation mean average precison at 50% IOU (Intersection over Union) threshold or `segm_mAP_50`, segmentation mean average precison at 75% IOU threshold or `segm_mAP_75`, segmentation mean average precison on small area (less than 32\*32 pixels) or `segm_mAP_s`, segmentation mean average precison on medium area (greater than 32\*32 but less than 96\*96 pixels ) or `segm_mAP_m` and segmentation mean average precison on large area (greater than 96\*96 pixels ) or `segm_mAP_l`.
 
-To get these metrics, simply run `Python tools/test.py PATH/TO/CONFIG PATH/TO/WEIGHTS`.
+To get these metrics for your model on the specific dataset on which it was trained or fine-tuned, simply run `Python tools/test.py PATH/TO/CONFIG PATH/TO/WEIGHTS` and the evaluation would be carried out on the test set.
 
 ## Optional - Visualization
 
